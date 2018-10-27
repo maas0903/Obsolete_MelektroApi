@@ -8,4 +8,5 @@ Select WAR file to upload
 Deploy
 
 http://pastei05.local/MelektroApi/apies/random
+
 http://pastei05.local/MelektroApi/apies/nato/getnato?str=abc
