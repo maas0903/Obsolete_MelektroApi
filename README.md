@@ -7,5 +7,5 @@ Undeploy MelektroApi
 Select WAR file to upload
 Deploy
 
-http://pastei05.local/MelektroApi/statics/random
-http://pastei05.local/MelektroApi/statics/nato/getnato?str=abc
+http://pastei05.local/MelektroApi/apies/random
+http://pastei05.local/MelektroApi/apies/nato/getnato?str=abc
