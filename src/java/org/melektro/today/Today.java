@@ -3,11 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package org.melektro.random;
+package org.melektro.today;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.melektro.Tools.RandomEMSet;
+import static com.melektro.Tools.ExtAPIs.GetToday;
+import java.io.IOException;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.UriInfo;
 import javax.ws.rs.Consumes;
@@ -16,42 +15,38 @@ import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PUT;
 import javax.ws.rs.core.MediaType;
-import java.util.List;
-//import io.swagger.jaxrs2.util.ReaderUtils;
 
 /**
- * 
  * REST Web Service
  *
- * @author Marius
+ * @author marius
  */
-@Path("random")
-//@Api( value = "/people", description = "Manage people" )
-public class Random {
+@Path("today")
+public class Today {
 
     @Context
     private UriInfo context;
 
     /**
-     * Creates a new instance of Random
+     * Creates a new instance of Today
      */
-    public Random() {
+    public Today() {
     }
 
     /**
-     * Retrieves representation of an instance of org.melektro.random.Random
+     * Retrieves representation of an instance of org.melektro.today.Today
      * @return an instance of java.lang.String
      */
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public String getJson() {
-        List<String> ThisSet;
-        ThisSet = RandomEMSet.makeARandomEMSet();
-        return new GsonBuilder().setPrettyPrinting().create().toJson(ThisSet);
+    public String getJson() throws IOException {
+        //var obj = JSON.parse(GetToday("",""));
+        String result = GetToday("","");
+        return "From wikipedia Length=" + result.length() +" text:"+ result;
     }
 
     /**
-     * PUT method for updating or creating an instance of Random
+     * PUT method for updating or creating an instance of Today
      * @param content representation for the resource
      */
     @PUT

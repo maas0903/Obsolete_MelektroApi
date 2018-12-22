@@ -29,9 +29,13 @@ public class ApplicationConfig extends Application {
      * If required, comment out calling this method in getClasses().
      */
     private void addRestResourceClasses(Set<Class<?>> resources) {
+        resources.add(io.swagger.jaxrs2.SwaggerSerializers.class);
+        resources.add(io.swagger.jaxrs2.integration.resources.AcceptHeaderOpenApiResource.class);
+        resources.add(io.swagger.jaxrs2.integration.resources.OpenApiResource.class);
         resources.add(org.melektro.NatoAlphabet.NatoAlphabet.class);
         resources.add(org.melektro.random.Random.class);
         resources.add(org.melektro.shift.Shift.class);
+        resources.add(org.melektro.today.Today.class);
     }
     
 }
